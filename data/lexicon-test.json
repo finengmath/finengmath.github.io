@@ -1,0 +1,26 @@
+[
+  {
+    "id": "derivative",
+    "fin": ["derivaatta"],
+    "eng": ["derivative"],
+    "topic": "calculus",
+    "notes": "Test translation",
+    "seealso": ["integral"]
+  },
+  {
+    "id": "integral",
+    "fin": ["integraali"],
+    "eng": ["integral"],
+    "swe": ["integral"],
+    "topic": "calculus",
+    "notes": "Test translation",
+    "seealso": ["derivative"]
+  },
+  {
+    "id": "probabilistic",
+    "fin": ["stokastinen","tilastollinen"],
+    "eng": ["statistical","stochastic","probabilistic"],
+    "topic": "stochastics",
+    "notes": "Test translation"
+  }
+]
