@@ -36,7 +36,7 @@
 
     <h1>Matematiikan suomi–englanti sanasto</h1>
     <h2>Finnish–English Mathematical Lexicon</h2>
-    <h2>Updated 2025-12-09 at 13:24</h2>
+    <h2>Updated 2025-12-09 at 13:27</h2>
 
     <input type="text" id="search" placeholder="Search term (FIN, ENG)...">
 
@@ -71,17 +71,15 @@
                 div.className = 'term';
                 div.innerHTML = `
                     <strong>${t.id}</strong><br>
-                    <span class="label">FIN:</span> ${t.fin ? t.fin.join(', ') : '-'}<br>
-                    <span class="label">ENG:</span> ${t.eng ? t.eng.join(', ') : '-'}<br>
-                    <span class="label">Topic:</span> ${t.topic || '-'}<br>
-                    <span class="label">Notes:</span> ${t.notes || '-'}<br>
-                    <span class="label">See also:</span> ${t.seealso ? t.seealso.join(', ') : '-'}
+                    <span class="label">suomi:</span> ${t.fin ? t.fin.join(', ') : '-'}<br>
+                    <span class="label">englanti:</span> ${t.eng ? t.eng.join(', ') : '-'}<br>
+                    <span class="label">Katso myös:</span> ${t.seealso ? t.seealso.join(', ') : '-'}
                 `;
                 resultsDiv.appendChild(div);
             });
 
             if (filtered.length === 0) {
-                resultsDiv.innerHTML = '<p>No matching terms found.</p>';
+                resultsDiv.innerHTML = '<p>Ei osumia.</p>';
             }
         });
     </script>
