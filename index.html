@@ -45,7 +45,7 @@
         let terms = [];
 
         // Load JSON data
-        fetch('data/terms.json')
+        fetch('data/lexicon-temp.json')
             .then(response => response.json())
             .then(data => { terms = data; })
             .catch(err => console.error("Failed to load JSON:", err));
