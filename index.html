@@ -62,9 +62,8 @@
 
             const filtered = terms.filter(t => 
                 t.id.toLowerCase().includes(query) ||
-                (t.fi && t.fi.some(f => f.toLowerCase().includes(query))) ||
-                (t.en && t.en.some(e => e.toLowerCase().includes(query))) ||
-                (t.sv && t.sv.some(s => s.toLowerCase().includes(query)))
+                (t.fi && t.fin.some(f => f.toLowerCase().includes(query))) ||
+                (t.en && t.eng.some(e => e.toLowerCase().includes(query)))
             );
 
             filtered.forEach(t => {
@@ -72,9 +71,8 @@
                 div.className = 'term';
                 div.innerHTML = `
                     <strong>${t.id}</strong><br>
-                    <span class="label">FI:</span> ${t.fi ? t.fi.join(', ') : '-'}<br>
-                    <span class="label">EN:</span> ${t.en ? t.en.join(', ') : '-'}<br>
-                    <span class="label">SV:</span> ${t.sv ? t.sv.join(', ') : '-'}<br>
+                    <span class="label">FIN:</span> ${t.fin ? t.fi.join(', ') : '-'}<br>
+                    <span class="label">ENG:</span> ${t.eng ? t.en.join(', ') : '-'}<br>
                     <span class="label">Topic:</span> ${t.topic || '-'}<br>
                     <span class="label">Notes:</span> ${t.notes || '-'}<br>
                     <span class="label">See also:</span> ${t.seealso ? t.seealso.join(', ') : '-'}
