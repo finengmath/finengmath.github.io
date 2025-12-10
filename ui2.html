@@ -11,6 +11,7 @@
   .term h2 { margin: 0 0 10px 0; }
   .term p { margin: 5px 0; }
   .field-title { font-weight: bold; }
+  mark { background-color: yellow; }
 </style>
 <!-- Load MathJax -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
@@ -36,12 +37,26 @@ fetch('data/lexicon.json')
     console.error(err);
   });
 
+// Function to escape HTML
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Function to highlight search term
+function highlight(text, term) {
+  if (!text) return '';
+  const escapedText = escapeHtml(text);
+  const regex = new RegExp(`(${term})`, 'gi');
+  return escapedText.replace(regex, '<mark>$1</mark>');
+}
+
 // Function to create a field paragraph if it exists and nonempty
-function createField(title, value) {
+function createField(title, value, query) {
   if (!value) return '';
   if (Array.isArray(value) && value.length === 0) return '';
-  // Escape HTML special chars, keep LaTeX intact
-  const content = Array.isArray(value) ? value.join(', ') : value;
+  const content = Array.isArray(value) ? value.map(v => highlight(v, query)).join(', ') : highlight(value, query);
   return `<p><span class="field-title">${title}:</span> ${content}</p>`;
 }
 
@@ -57,7 +72,11 @@ searchInput.addEventListener('input', () => {
 
   const results = dictionary.filter(term =>
     (term.fi || []).some(f => f.toLowerCase().includes(query)) ||
-    (term.en || []).some(e => e.toLowerCase().includes(query))
+    (term.en || []).some(e => e.toLowerCase().includes(query)) ||
+    (term.descr_en && term.descr_en.toLowerCase().includes(query)) ||
+    (term.descr_fi && term.descr_fi.toLowerCase().includes(query)) ||
+    (term.related && term.related.some(r => r.toLowerCase().includes(query))) ||
+    (term.note_en && term.note_en.toLowerCase().includes(query))
   );
 
   if (results.length === 0) {
@@ -72,15 +91,17 @@ searchInput.addEventListener('input', () => {
 
     // Always show term names if present
     if ((term.en && term.en.length) || (term.fi && term.fi.length)) {
-      html += `<h2>${(term.en || []).join(', ')}${(term.fi && term.fi.length ? ' (' + term.fi.join(', ') + ')' : '')}</h2>`;
+      const nameEN = (term.en || []).map(e => highlight(e, query)).join(', ');
+      const nameFI = (term.fi && term.fi.length ? ' (' + term.fi.map(f => highlight(f, query)).join(', ') + ')' : '');
+      html += `<h2>${nameEN}${nameFI}</h2>`;
     }
 
-    // Dynamically display all nonempty fields
-    html += createField('Topic', term.topic);
-    html += createField('Description (EN)', term.descr_en);
-    html += createField('Description (FI)', term.descr_fi);
-    html += createField('Related', term.related);
-    html += createField('Note', term.note_en);
+    // Dynamically display all nonempty fields with highlights
+    html += createField('Topic', term.topic, query);
+    html += createField('Description (EN)', term.descr_en, query);
+    html += createField('Description (FI)', term.descr_fi, query);
+    html += createField('Related', term.related, query);
+    html += createField('Note', term.note_en, query);
 
     div.innerHTML = html;
     resultsDiv.appendChild(div);
