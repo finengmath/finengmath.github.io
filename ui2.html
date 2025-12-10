@@ -13,7 +13,14 @@
   .field-title { font-weight: bold; }
   mark { background-color: yellow; }
 </style>
-<!-- Load MathJax -->
+
+<!-- MathJax configuration -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
@@ -23,11 +30,10 @@
 <div id="results">Loading dictionary...</div>
 
 <script>
-// Load dictionary JSON
 let dictionary = [];
 
 fetch('data/lexicon.json')
-  .then(response => response.json())
+  .then(resp => resp.json())
   .then(data => {
     dictionary = data;
     document.getElementById('results').innerHTML = '<p>Dictionary loaded. Start typing to search.</p>';
@@ -37,22 +43,28 @@ fetch('data/lexicon.json')
     console.error(err);
   });
 
-// Function to escape HTML
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
-// Function to highlight search term
+// Highlight outside math
 function highlight(text, term) {
   if (!text) return '';
-  const escapedText = escapeHtml(text);
-  const regex = new RegExp(`(${term})`, 'gi');
-  return escapedText.replace(regex, '<mark>$1</mark>');
+  const regex = /\$(.*?)\$|\\\((.*?)\\\)/g; // match inline math
+  let result = '';
+  let lastIndex = 0;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    // highlight text before math
+    const before = text.substring(lastIndex, match.index);
+    result += before.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
+    // add math unmodified
+    result += match[0];
+    lastIndex = regex.lastIndex;
+  }
+  // highlight text after last math
+  const after = text.substring(lastIndex);
+  result += after.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
+  return result;
 }
 
-// Function to create a field paragraph if it exists and nonempty
+// Create field paragraph
 function createField(title, value, query) {
   if (!value) return '';
   if (Array.isArray(value) && value.length === 0) return '';
@@ -60,7 +72,7 @@ function createField(title, value, query) {
   return `<p><span class="field-title">${title}:</span> ${content}</p>`;
 }
 
-// Search function
+// Search
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
 
@@ -89,14 +101,12 @@ searchInput.addEventListener('input', () => {
     div.className = 'term';
     let html = '';
 
-    // Always show term names if present
     if ((term.en && term.en.length) || (term.fi && term.fi.length)) {
-      const nameEN = (term.en || []).map(e => highlight(e, query)).join(', ');
-      const nameFI = (term.fi && term.fi.length ? ' (' + term.fi.map(f => highlight(f, query)).join(', ') + ')' : '');
+      const nameEN = (term.en || []).join(', ');
+      const nameFI = (term.fi && term.fi.length ? ' (' + term.fi.join(', ') + ')' : '');
       html += `<h2>${nameEN}${nameFI}</h2>`;
     }
 
-    // Dynamically display all nonempty fields with highlights
     html += createField('Topic', term.topic, query);
     html += createField('Description (EN)', term.descr_en, query);
     html += createField('Description (FI)', term.descr_fi, query);
@@ -107,10 +117,8 @@ searchInput.addEventListener('input', () => {
     resultsDiv.appendChild(div);
   });
 
-  // Ask MathJax to typeset the new content
-  if (window.MathJax) {
-    MathJax.typesetPromise();
-  }
+  // Render math
+  if (window.MathJax) MathJax.typesetPromise();
 });
 </script>
 
