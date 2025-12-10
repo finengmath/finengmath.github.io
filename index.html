@@ -46,10 +46,10 @@
         let terms = [];
 
         // Load JSON data
-        fetch('data/lexicon-test.json')
+        fetch('data/lexicon.json')
             .then(response => response.json())
             .then(data => { terms = data; })
-            .catch(err => console.error("Failed to load JSON:", err));
+            .catch(err => console.error("JSON-lataus ei onnistunut:", err));
 
         const searchInput = document.getElementById('search');
         const resultsDiv = document.getElementById('results');
