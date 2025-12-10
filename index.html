@@ -36,7 +36,7 @@
 
     <h1>Matematiikan suomi–englanti sanasto</h1>
     <h2>Finnish–English Mathematical Lexicon</h2>
-    <h2>Updated 2025-12-09 at 13:27</h2>
+    <h2>Updated 2025-12-10 at 13:35</h2>
 
     <input type="text" id="search" placeholder="Search term (FIN, ENG)...">
 
@@ -62,8 +62,8 @@
 
             const filtered = terms.filter(t => 
                 t.id.toLowerCase().includes(query) ||
-                (t.fin && t.fin.some(f => f.toLowerCase().includes(query))) ||
-                (t.eng && t.eng.some(e => e.toLowerCase().includes(query)))
+                (t.fi && t.fi.some(f => f.toLowerCase().includes(query))) ||
+                (t.en && t.en.some(e => e.toLowerCase().includes(query)))
             );
 
             filtered.forEach(t => {
@@ -71,8 +71,8 @@
                 div.className = 'term';
                 div.innerHTML = `
                     <strong>${t.id}</strong><br>
-                    <span class="label">suomi:</span> ${t.fin ? t.fin.join(', ') : '-'}<br>
-                    <span class="label">englanti:</span> ${t.eng ? t.eng.join(', ') : '-'}<br>
+                    <span class="label">suomi:</span> ${t.fi ? t.fi.join(', ') : '-'}<br>
+                    <span class="label">englanti:</span> ${t.en ? t.en.join(', ') : '-'}<br>
                     <span class="label">Katso myös:</span> ${t.seealso ? t.seealso.join(', ') : '-'}
                 `;
                 resultsDiv.appendChild(div);
