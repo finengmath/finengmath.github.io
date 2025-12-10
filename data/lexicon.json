@@ -1,6 +1,6 @@
 [
   {
-    "key": "mean_arithmetic",
+    "id": "mean_arithmetic",
     "fi": ["keskiarvo", "aritmeettinen keskiarvo"],
     "en": ["arithmetic mean", "average", "mean"],
     "topic": "stochastics",
@@ -10,7 +10,7 @@
     "note_en": null
   },
   {
-    "key": "expectation",
+    "id": "expectation",
     "fi": ["odotusarvo"],
     "en": ["expectation", "expected value", "mean"],
     "topic": "stochastics",
@@ -20,7 +20,7 @@
     "note_en": null
   },
   {
-    "key": "graph_network",
+    "id": "graph_network",
     "fi": ["verkko"],
     "en": ["graph", "network"],
     "topic": "discrete",
@@ -30,7 +30,7 @@
     "note_en": null
   },
   {
-    "key": "graph_function",
+    "id": "graph_function",
     "fi": ["kuvaaja"],
     "en": ["graph"],
     "topic": "basic",
@@ -40,7 +40,7 @@
     "note_en": null
   },
   {
-    "key": "graph_chart",
+    "id": "graph_chart",
     "fi": ["kuvio"],
     "en": ["chart", "plot", "graph"],
     "topic": "basic",
@@ -50,7 +50,7 @@
     "note_en": null
   },
   {
-    "key": "axis",
+    "id": "axis",
     "fi": ["akseli"],
     "en": ["axis"],
     "topic": "geometry",
@@ -60,7 +60,7 @@
     "note_en": "Plural: axes"
   },
   {
-    "key": "slope",
+    "id": "slope",
     "fi": ["kulmakerroin"],
     "en": ["slope", "angular coefficient"],
     "topic": "geometry",
@@ -70,7 +70,7 @@
     "note_en": null
   },
   {
-    "key": "stochastic",
+    "id": "stochastic",
     "fi": ["stokastinen"],
     "en": ["stochastic", "probabilistic"],
     "topic": "stochastics",
@@ -80,7 +80,7 @@
     "note_en": "Covers concepts sometimes called 'probabilistic' in other texts."
   },
   {
-    "key": "statistical",
+    "id": "statistical",
     "fi": ["tilastollinen"],
     "en": ["statistical"],
     "topic": "stochastics",
