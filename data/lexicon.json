@@ -1,0 +1,92 @@
+[
+  {
+    "key": "mean_arithmetic",
+    "fi": ["keskiarvo", "aritmeettinen keskiarvo"],
+    "en": ["arithmetic mean", "average", "mean"],
+    "topic": "stochastics",
+    "descr_en": "The mean of numbers $x_1,..., x_n$ is $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
+    "descr_fi": "Lukujen $x_1,..., x_n$ keskiarvo on $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
+    "related": ["expectation"],
+    "note_en": null
+  },
+  {
+    "key": "expectation",
+    "fi": ["odotusarvo"],
+    "en": ["expectation", "expected value", "mean"],
+    "topic": "stochastics",
+    "descr_en": "The expectation of a uniformly distributed random variable in $[0,1]$ is $1/2$.",
+    "descr_fi": "Välillä $[0,1]$ tasajakautuneen satunnaismuuttujan odotusarvo on $1/2$.",
+    "related": ["mean_arithmetic"],
+    "note_en": null
+  },
+  {
+    "key": "graph_network",
+    "fi": ["verkko"],
+    "en": ["graph", "network"],
+    "topic": "discrete",
+    "descr_en": "The complete undirected graph on node set $\\{1,..., n\\}$ contains $\\binom{n}{2}$ links.",
+    "descr_fi": "Solmujoukon $\\{1,..., n\\}$ täysi suuntaamaton verkko sisältää $\\binom{n}{2}$ linkkiä.",
+    "related": null,
+    "note_en": null
+  },
+  {
+    "key": "graph_function",
+    "fi": ["kuvaaja"],
+    "en": ["graph"],
+    "topic": "basic",
+    "descr_en": null,
+    "descr_fi": "Funktion $f$ kuvaaja muodostuu tason pisteistä $\\{(x, f(x))\\}$.",
+    "related": null,
+    "note_en": null
+  },
+  {
+    "key": "graph_chart",
+    "fi": ["kuvio"],
+    "en": ["chart", "plot", "graph"],
+    "topic": "basic",
+    "descr_en": null,
+    "descr_fi": null,
+    "related": null,
+    "note_en": null
+  },
+  {
+    "key": "axis",
+    "fi": ["akseli"],
+    "en": ["axis"],
+    "topic": "geometry",
+    "descr_en": "E.g. $x$-axis, $y$-axis.",
+    "descr_fi": "Esim. $x$-akseli, $y$-akseli.",
+    "related": null,
+    "note_en": "Plural: axes"
+  },
+  {
+    "key": "slope",
+    "fi": ["kulmakerroin"],
+    "en": ["slope", "angular coefficient"],
+    "topic": "geometry",
+    "descr_en": null,
+    "descr_fi": null,
+    "related": null,
+    "note_en": null
+  },
+  {
+    "key": "stochastic",
+    "fi": ["stokastinen"],
+    "en": ["stochastic", "probabilistic"],
+    "topic": "stochastics",
+    "descr_en": "Involving or based on randomness or probability.",
+    "descr_fi": "Satunnaisuuteen tai todennäköisyyteen liittyvä.",
+    "related": null,
+    "note_en": "Covers concepts sometimes called 'probabilistic' in other texts."
+  },
+  {
+    "key": "statistical",
+    "fi": ["tilastollinen"],
+    "en": ["statistical"],
+    "topic": "stochastics",
+    "descr_en": null,
+    "descr_fi": null,
+    "related": null,
+    "note_en": null
+  }
+]
