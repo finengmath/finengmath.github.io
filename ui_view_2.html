@@ -12,6 +12,8 @@
   .term p { margin: 5px 0; }
   .field-title { font-weight: bold; }
 </style>
+<!-- Load MathJax -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
 
@@ -38,7 +40,9 @@ fetch('data/lexicon.json')
 function createField(title, value) {
   if (!value) return '';
   if (Array.isArray(value) && value.length === 0) return '';
-  return `<p><span class="field-title">${title}:</span> ${Array.isArray(value) ? value.join(', ') : value}</p>`;
+  // Escape HTML special chars, keep LaTeX intact
+  const content = Array.isArray(value) ? value.join(', ') : value;
+  return `<p><span class="field-title">${title}:</span> ${content}</p>`;
 }
 
 // Search function
@@ -81,9 +85,13 @@ searchInput.addEventListener('input', () => {
     div.innerHTML = html;
     resultsDiv.appendChild(div);
   });
+
+  // Ask MathJax to typeset the new content
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
 });
 </script>
 
 </body>
 </html>
-
