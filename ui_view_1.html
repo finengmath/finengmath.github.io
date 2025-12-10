@@ -34,8 +34,7 @@
 </head>
 <body>
 
-    <h1>Matematiikan suomi–englanti sanasto (2025-12-10 14:34)</h1>
-    <h2>Finnish–English Mathematical Lexicon</h2>
+    <h1>Matematiikan suomi–englanti sanasto</h1>
 
     <input type="text" id="search" placeholder="Hakusana (suomeksi tai englanniksi)...">
 
@@ -48,7 +47,7 @@
         fetch('data/lexicon.json')
             .then(response => response.json())
             .then(data => { terms = data; })
-            .catch(err => console.error("JSON-lataus ei onnistunut:", err));
+            .catch(err => console.error("JSON-tiedoston lataus ei onnistunut:", err));
 
         const searchInput = document.getElementById('search');
         const resultsDiv = document.getElementById('results');
@@ -72,7 +71,7 @@
                     <strong>${t.id}</strong><br>
                     <span class="label">suomi:</span> ${t.fi ? t.fi.join(', ') : '-'}<br>
                     <span class="label">englanti:</span> ${t.en ? t.en.join(', ') : '-'}<br>
-                    <span class="label">Katso myös:</span> ${t.seealso ? t.seealso.join(', ') : '-'}
+                    <span class="label">Selite:</span> ${t.descr_fi ? t.descr_fi.join(', ') : '-'}
                 `;
                 resultsDiv.appendChild(div);
             });
