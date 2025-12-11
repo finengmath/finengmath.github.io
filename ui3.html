@@ -62,11 +62,14 @@ searchInput.addEventListener('input', () => {
     const div = document.createElement('div');
     div.className = 'term';
 
-    const firstMatch = t.en.find(e => e.toLowerCase().includes(query));
-    const otherEn = t.en.filter(e => e !== firstMatch);
+    // First English word bold
+    const firstEn = t.en[0];
+    // Rest of English words in parentheses (if any)
+    const otherEn = t.en.slice(1);
+    const enHtml = firstEn + (otherEn.length ? ' (' + otherEn.join(', ') + ')' : '');
 
     div.innerHTML = `
-      <div class="term-line"><strong>${firstMatch}</strong>${otherEn.length ? ' (' + otherEn.join(', ') + ')' : ''}</div>
+      <div class="term-line"><strong>${enHtml}</strong></div>
       ${t.descr_en ? '<div class="term-line">' + t.descr_en + '</div>' : ''}
       ${t.fi ? '<div class="term-line"><span class="label">suomi:</span> ' + t.fi.join(', ') + '</div>' : ''}
     `;
