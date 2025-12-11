@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Math Dictionary</title>
+<title>Math Dictionary - Dev View</title>
 <style>
-  body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+  body { font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; }
   input { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
-  .term { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+  .term { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; background: #f9f9f9; }
   .term h2 { margin: 0 0 10px 0; }
-  .term p { margin: 5px 0; }
+  .term p { margin: 3px 0; }
   .field-title { font-weight: bold; }
-  mark { background-color: yellow; }
 </style>
 
 <!-- MathJax configuration -->
@@ -25,11 +24,12 @@ window.MathJax = {
 </head>
 <body>
 
-<h1>Math Dictionary</h1>
+<h1>Math Dictionary - Dev/Test View</h1>
 <input type="text" id="searchInput" placeholder="Search for a term...">
 <div id="results">Loading dictionary...</div>
 
 <script>
+// --- Load dictionary ---
 let dictionary = [];
 
 fetch('data/lexicon.json')
@@ -43,36 +43,14 @@ fetch('data/lexicon.json')
     console.error(err);
   });
 
-// Highlight outside math
-function highlight(text, term) {
-  if (!text) return '';
-  const regex = /\$(.*?)\$|\\\((.*?)\\\)/g; // match inline math
-  let result = '';
-  let lastIndex = 0;
-  let match;
-  while ((match = regex.exec(text)) !== null) {
-    // highlight text before math
-    const before = text.substring(lastIndex, match.index);
-    result += before.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
-    // add math unmodified
-    result += match[0];
-    lastIndex = regex.lastIndex;
-  }
-  // highlight text after last math
-  const after = text.substring(lastIndex);
-  result += after.replace(new RegExp(`(${term})`, 'gi'), '<mark>$1</mark>');
-  return result;
-}
-
-// Create field paragraph
-function createField(title, value, query) {
+// --- Helper: display all non-empty fields ---
+function createField(name, value) {
   if (!value) return '';
-  if (Array.isArray(value) && value.length === 0) return '';
-  const content = Array.isArray(value) ? value.map(v => highlight(v, query)).join(', ') : highlight(value, query);
-  return `<p><span class="field-title">${title}:</span> ${content}</p>`;
+  if (Array.isArray(value)) value = value.join(', ');
+  return `<p><span class="field-title">${name}:</span> ${value}</p>`;
 }
 
-// Search
+// --- Search ---
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
 
@@ -83,12 +61,11 @@ searchInput.addEventListener('input', () => {
   if (!query) return;
 
   const results = dictionary.filter(term =>
-    (term.fi || []).some(f => f.toLowerCase().includes(query)) ||
-    (term.en || []).some(e => e.toLowerCase().includes(query)) ||
-    (term.descr_en && term.descr_en.toLowerCase().includes(query)) ||
-    (term.descr_fi && term.descr_fi.toLowerCase().includes(query)) ||
-    (term.related && term.related.some(r => r.toLowerCase().includes(query))) ||
-    (term.note_en && term.note_en.toLowerCase().includes(query))
+    Object.values(term).some(v => {
+      if (!v) return false;
+      if (Array.isArray(v)) return v.some(s => s.toLowerCase().includes(query));
+      return String(v).toLowerCase().includes(query);
+    })
   );
 
   if (results.length === 0) {
@@ -101,17 +78,14 @@ searchInput.addEventListener('input', () => {
     div.className = 'term';
     let html = '';
 
-    if ((term.en && term.en.length) || (term.fi && term.fi.length)) {
-      const nameEN = (term.en || []).join(', ');
-      const nameFI = (term.fi && term.fi.length ? ' (' + term.fi.join(', ') + ')' : '');
-      html += `<h2>${nameEN}${nameFI}</h2>`;
-    }
+    // Display id field first
+    html += createField('ID', term.id);
 
-    html += createField('Topic', term.topic, query);
-    html += createField('Description (EN)', term.descr_en, query);
-    html += createField('Description (FI)', term.descr_fi, query);
-    html += createField('Related', term.related, query);
-    html += createField('Note', term.note_en, query);
+    // Display all other fields
+    for (const key in term) {
+      if (key === 'id') continue; // already displayed
+      html += createField(key, term[key]);
+    }
 
     div.innerHTML = html;
     resultsDiv.appendChild(div);
