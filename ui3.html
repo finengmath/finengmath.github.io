@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English → Finnish Dictionary</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: auto; }
+  input { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+  .term { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+  .term-line { margin: 3px 0; }
+  .label { font-weight: bold; }
+</style>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+
+<h1>English → Finnish Dictionary</h1>
+<input type="text" id="searchInput" placeholder="Search English term...">
+<div id="results">Start typing to search...</div>
+
+<script>
+// Example dictionary JSON
+const terms = [
+  {
+    "id": "ball",
+    "en": ["ball"],
+    "fi": ["pallo", "kuula"],
+    "descr_en": "The open ball of radius $r$ and center $x$ is the set of all points whose distance from $x$ is less than $r$."
+  },
+  {
+    "id": "mean_arithmetic",
+    "en": ["arithmetic mean", "average", "mean"],
+    "fi": ["keskiarvo", "aritmeettinen keskiarvo"],
+    "descr_en": "The mean of numbers $x_1,\\dots, x_n$ is $\\frac{1}{n} \\sum_{i=1}^n x_i$."
+  }
+  // Add more terms here
+];
+
+const input = document.getElementById('searchInput');
+const resultsDiv = document.getElementById('results');
+
+input.addEventListener('input', () => {
+  const query = input.value.trim().toLowerCase();
+  resultsDiv.innerHTML = '';
+
+  if (!query) return;
+
+  // Filter terms where any English word matches query
+  const filtered = terms.filter(t =>
+    t.en && t.en.some(e => e.toLowerCase().includes(query))
+  );
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = '<p>No matches found.</p>';
+    return;
+  }
+
+  filtered.forEach(t => {
+    const div = document.createElement('div');
+    div.className = 'term';
+
+    // Find the first matching English word
+    const firstMatch = t.en.find(e => e.toLowerCase().includes(query));
+    // Other English words
+    const otherEn = t.en.filter(e => e !== firstMatch);
+
+    div.innerHTML = `
+      <div class="term-line"><strong>${firstMatch}</strong>${otherEn.length ? ' (' + otherEn.join(', ') + ')' : ''}</div>
+      ${t.descr_en ? '<div class="term-line">' + t.descr_en + '</div>' : ''}
+      ${t.fi ? '<div class="term-line"><span class="label">suomi:</span> ' + t.fi.join(', ') + '</div>' : ''}
+    `;
+
+    resultsDiv.appendChild(div);
+  });
+
+  // Render math
+  if (window.MathJax) MathJax.typesetPromise();
+});
+</script>
+
+</body>
+</html>
