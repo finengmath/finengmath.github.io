@@ -1,92 +1,124 @@
 [
   {
-    "id": "mean_arithmetic",
-    "fi": ["keskiarvo", "aritmeettinen keskiarvo"],
-    "en": ["arithmetic mean", "average", "mean"],
-    "topic": "stochastics",
-    "descr_en": "The mean of numbers $x_1,..., x_n$ is $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
-    "descr_fi": "Lukujen $x_1,..., x_n$ keskiarvo on $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
-    "related": ["expectation"],
-    "note_en": null
-  },
-  {
-    "id": "expectation",
-    "fi": ["odotusarvo"],
-    "en": ["expectation", "expected value", "mean"],
-    "topic": "stochastics",
-    "descr_en": "The expectation of a uniformly distributed random variable in $[0,1]$ is $1/2$.",
-    "descr_fi": "Välillä $[0,1]$ tasajakautuneen satunnaismuuttujan odotusarvo on $1/2$.",
-    "related": ["mean_arithmetic"],
-    "note_en": null
-  },
-  {
     "id": "graph_network",
-    "fi": ["verkko"],
+    "fi": ["verkko", "graafi"],
     "en": ["graph", "network"],
-    "topic": "discrete",
-    "descr_en": "The complete undirected graph on node set $\\{1,..., n\\}$ contains $\\binom{n}{2}$ links.",
-    "descr_fi": "Solmujoukon $\\{1,..., n\\}$ täysi suuntaamaton verkko sisältää $\\binom{n}{2}$ linkkiä.",
-    "related": null,
-    "note_en": null
+    "descr_en": "The complete undirected graph on node set $\\{1,\\dots, n\\}$ contains $\\binom{n}{2}$ links.",
+    "descr_fi": "Solmujoukon $\\{1,\\dots, n\\}$ täysi suuntaamaton verkko sisältää $\\binom{n}{2}$ linkkiä.",
+    "topic": "discrete"
   },
   {
     "id": "graph_function",
     "fi": ["kuvaaja"],
     "en": ["graph"],
-    "topic": "basic",
-    "descr_en": null,
-    "descr_fi": "Funktion $f$ kuvaaja muodostuu tason pisteistä $\\{(x, f(x))\\}$.",
-    "related": null,
-    "note_en": null
+    "descr_fi": "Funktion $f$ kuvaaja muodostuu tason pisteistä $(x, f(x))$.",
+    "topic": "basic"
   },
   {
     "id": "graph_chart",
     "fi": ["kuvio"],
     "en": ["chart", "plot", "graph"],
-    "topic": "basic",
-    "descr_en": null,
-    "descr_fi": null,
-    "related": null,
-    "note_en": null
+    "topic": "basic"
   },
   {
     "id": "axis",
     "fi": ["akseli"],
     "en": ["axis"],
-    "topic": "geometry",
-    "descr_en": "E.g. $x$-axis, $y$-axis.",
     "descr_fi": "Esim. $x$-akseli, $y$-akseli.",
-    "related": null,
-    "note_en": "Plural: axes"
+    "descr_en": "E.g. $x$-axis, $y$-axis.",
+    "note_en": "Plural: axes",
+    "topic": "geometry"
   },
   {
     "id": "slope",
     "fi": ["kulmakerroin"],
     "en": ["slope", "angular coefficient"],
+    "topic": "geometry"
+  },
+  {
+    "id": "disk",
+    "fi": ["kiekko"],
+    "en": ["disk"],
+    "descr_en": "The open disk of radius $r$ and center $x$ consists of the points in a plane whose distance from $x$ is less than $r$.",
+    "descr_fi": "Avoin kiekko säteenä $r$ ja keskipisteenä $x$ koostuu tason pisteistä, joiden etäisyys $x$:stä on alle $r$.",
     "topic": "geometry",
-    "descr_en": null,
-    "descr_fi": null,
-    "related": null,
-    "note_en": null
+    "related": ["ball", "circle"]
+  },
+  {
+    "id": "ball",
+    "fi": ["pallo", "kuula"],
+    "en": ["ball"],
+    "descr_en": "The open ball of radius $r$ and center $x$ is the set of all points whose distance from $x$ is less than $r$.",
+    "descr_fi": "Avoin pallo säteenä $r$ ja keskipisteenä $x$ koostuu pisteistä, joiden etäisyys $x$:stä on alle $r$.",
+    "topic": "geometry",
+    "related": ["disk", "sphere"]
+  },
+  {
+    "id": "circle",
+    "fi": ["ympyrä"],
+    "en": ["circle"],
+    "descr_en": "The circle of radius $r$ and center $x$ consists of the points of the plane whose distance from $x$ is $r$.",
+    "descr_fi": "Ympyrä säteenä $r$ ja keskipisteenä $x$ muodostuu tason pisteistä, joiden etäisyys $x$:stä on $r$.",
+    "topic": "geometry",
+    "related": ["sphere", "disk"]
+  },
+  {
+    "id": "sphere",
+    "fi": ["pallopinta"],
+    "en": ["sphere"],
+    "descr_en": "The sphere of radius $r$ and center $x$ is the set of points whose distance from $x$ is $r$.",
+    "descr_fi": "Pallopinta säteenä $r$ ja keskipisteenä $x$ muodostuu pisteistä, joiden etäisyys $x$:stä on $r$.",
+    "topic": "geometry",
+    "related": ["circle", "ball"]
+  },
+  {
+    "id": "hyperball",
+    "fi": ["pallo", "kuula", "hyperpallo", "hyperkuula"],
+    "en": ["ball", "hyperball"],
+    "descr_en": "A hyperball is a ball in a high-dimensional space.",
+    "descr_fi": "Hyperpallo on korkeaulotteisen avaruuden pallo.",
+    "topic": "geometry",
+    "related": ["ball"]
+  },
+  {
+    "id": "hypersphere",
+    "fi": ["pallopinta", "hyperpallopinta"],
+    "en": ["sphere", "hypersphere"],
+    "descr_en": "A hypersphere is a sphere in a high-dimensional space.",
+    "descr_fi": "Hyperpallopinta on korkeaulotteisen avaruuden pallopinta.",
+    "topic": "geometry",
+    "related": ["ball"]
   },
   {
     "id": "stochastic",
     "fi": ["stokastinen"],
     "en": ["stochastic", "probabilistic"],
-    "topic": "stochastics",
     "descr_en": "Involving or based on randomness or probability.",
     "descr_fi": "Satunnaisuuteen tai todennäköisyyteen liittyvä.",
-    "related": null,
-    "note_en": "Covers concepts sometimes called 'probabilistic' in other texts."
+    "topic": "stochastics"
   },
   {
     "id": "statistical",
     "fi": ["tilastollinen"],
     "en": ["statistical"],
+    "topic": "stochastics"
+  },
+  {
+    "id": "mean_arithmetic",
+    "fi": ["keskiarvo", "aritmeettinen keskiarvo"],
+    "en": ["arithmetic mean", "average", "mean"],
+    "descr_en": "The mean of numbers $x_1,\\dots, x_n$ is $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
+    "descr_fi": "Lukujen $x_1,\\dots, x_n$ keskiarvo on $\\frac{1}{n} \\sum_{i=1}^n x_i$.",
     "topic": "stochastics",
-    "descr_en": null,
-    "descr_fi": null,
-    "related": null,
-    "note_en": null
+    "related": ["expectation"]
+  },
+  {
+    "id": "expectation",
+    "fi": ["odotusarvo"],
+    "en": ["expectation", "expected value", "mean"],
+    "descr_en": "The expectation of a uniformly distributed random variable in $[0,1]$ is $1/2$.",
+    "descr_fi": "Välillä $[0,1]$ tasajakautuneen satunnaismuuttujan odotusarvo on $1/2$.",
+    "topic": "stochastics",
+    "related": ["mean_arithmetic"]
   }
 ]
