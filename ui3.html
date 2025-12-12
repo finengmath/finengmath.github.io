@@ -69,9 +69,9 @@ searchInput.addEventListener('input', () => {
     const enHtml = firstEn + (otherEn.length ? ' (' + otherEn.join(', ') + ')' : '');
 
     div.innerHTML = `
-      <div class="term-line"><strong>${enHtml}</strong></div>
+      <div class="term-line"><i>${enHtml}</i></div>
+      ${t.fi ? '<div class="term-line"> ' + t.fi.join(', ') + '</div>' : ''}
       ${t.descr_fi ? '<div class="term-line">' + t.descr_fi + '</div>' : ''}
-      ${t.fi ? '<div class="term-line"><span class="label">suomi:</span> ' + t.fi.join(', ') + '</div>' : ''}
     `;
 
     resultsDiv.appendChild(div);
