@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English → Finnish Dictionary</title>
+<title>Englanti--suomi sanasto</title>
 <style>
   body { font-family: Arial, sans-serif; padding: 20px; max-width: 700px; margin: auto; }
   input { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
@@ -22,9 +22,9 @@ window.MathJax = {
 </head>
 <body>
 
-<h1>English → Finnish Dictionary</h1>
-<input type="text" id="searchInput" placeholder="Search English term...">
-<div id="results">Loading dictionary...</div>
+<h1>Englanti--suomi sanasto</h1>
+<input type="text" id="searchInput" placeholder="Hae englannikielistä termiä...">
+<div id="results">Ladataan sanastoa...</div>
 
 <script>
 const resultsDiv = document.getElementById('results');
@@ -36,10 +36,10 @@ fetch('data/lexicon.json')
   .then(resp => resp.json())
   .then(data => {
     terms = data;
-    resultsDiv.innerHTML = '<p>Dictionary loaded. Start typing to search.</p>';
+    resultsDiv.innerHTML = '<p>Sanasto ladattu.</p>';
   })
   .catch(err => {
-    resultsDiv.innerHTML = '<p>Error loading dictionary.</p>';
+    resultsDiv.innerHTML = '<p>Sanaston lataus epäonnistui.</p>';
     console.error(err);
   });
 
@@ -54,7 +54,7 @@ searchInput.addEventListener('input', () => {
   );
 
   if (filtered.length === 0) {
-    resultsDiv.innerHTML = '<p>No matches found.</p>';
+    resultsDiv.innerHTML = '<p>Ei osumia.</p>';
     return;
   }
 
@@ -70,7 +70,7 @@ searchInput.addEventListener('input', () => {
 
     div.innerHTML = `
       <div class="term-line"><strong>${enHtml}</strong></div>
-      ${t.descr_en ? '<div class="term-line">' + t.descr_en + '</div>' : ''}
+      ${t.descr_fi ? '<div class="term-line">' + t.descr_fi + '</div>' : ''}
       ${t.fi ? '<div class="term-line"><span class="label">suomi:</span> ' + t.fi.join(', ') + '</div>' : ''}
     `;
 
