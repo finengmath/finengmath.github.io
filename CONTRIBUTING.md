@@ -54,6 +54,7 @@ Thank you for helping improve it.
 
 ### Example
 
+```bibtex
 @concept{absolute-continuity,
   % ---------- admin (mandatory, hidden) ----------
   id     = {absolute-continuity},
@@ -78,7 +79,7 @@ Thank you for helping improve it.
   fi_seealso = {Radonin--Nikodymin lause},
   en_seealso = {Radon--Nikodym theorem}
 }
-
+```
 
 ---
 
