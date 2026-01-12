@@ -1,0 +1,87 @@
+
+# Contributing to the FI–EN–FI Math Dictionary
+
+Welcome! This repository collects mathematical concepts with their Finnish and English terms.  
+Thank you for helping improve it.
+
+---
+
+## 1. Concept vs Term
+
+- **Concept:** a single mathematical idea. Each BibTeX entry represents one concept.  
+- **Term:** a language-specific name for a concept. A concept may have multiple terms per language, listed in order of preference.
+
+
+## 2. File Format Rules
+
+### Entry Type
+
+- Use **BibTeX** as the master format.
+- Use a custom entry type, `@concept`.
+- **One entry per concept**. Do **not** create multiple entries for synonyms.
+
+### Entry Keys
+
+- Entry keys (used as `id`) must:
+  - Use hyphens (`absolute-continuity`), never underscores
+  - Be unique and immutable once created
+
+### Language-Specific Fields
+
+- Prefix all fields with the ISO language code:
+  - `fi_` for Finnish
+  - `en_` for English
+- **Mandatory public fields:**
+  - `fi_terms` — Finnish terms (most important first)
+  - `en_terms` — English terms (most important first)
+- **Optional public fields:**
+  - `fi_notes` / `en_notes` — definitions, examples, inflection guidance
+  - `fi_seealso` / `en_seealso` — related terms or concepts
+- **Mandatory admin fields (hidden from public):**
+  - `id` — unique concept identifier
+  - `date` — last updated in ISO-8601 format (`YYYY-MM-DD`)
+  - `status` — either `draft` or `ready`
+
+### Notes
+
+- Terms are **comma-separated** and ordered by importance.
+- `*_notes` can include:
+  - Definitions
+  - Examples
+  - Inflection guides
+- `*_seealso` should be human-readable references to related concepts; optional but recommended.
+
+---
+
+## 3. Status Workflow
+
+- All new entries must have `status = {draft}`.
+- Maintainers review entries and set `status = {ready}` once approved.
+- Only entries with `status = {ready}` are published to the public site.
+
+---
+
+## 4. How to Contribute
+
+- To be announced.
+
+> Tip: Make sure to include `date` and `status = {draft}` in all new entries.
+
+---
+
+## 5. What Not to Do
+
+- Do **not** add machine-translated terms without review
+- Do **not** rename an existing `id`
+- Do **not** create multiple concepts for simple synonyms
+- Do **not** change published entries without maintainers’ approval (`status = ready`)
+
+---
+
+## 6. References
+
+- Each entry represents **one concept**, independent of language.
+- Terms are **language-specific**.
+- Use **one entry per concept** to ensure clarity, maintainability, and scalability.
+
+Thank you for contributing!
