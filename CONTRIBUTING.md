@@ -51,6 +51,35 @@ Thank you for helping improve it.
   - Inflection guides
 - `*_seealso` should be human-readable references to related concepts; optional but recommended.
 
+
+### Example
+
+@concept{absolute-continuity,
+  % ---------- admin (mandatory, hidden) ----------
+  id     = {absolute-continuity},
+  date   = {2026-01-12},
+  status = {ready},
+
+  % ---------- public (mandatory) ----------
+  fi_terms = {absoluuttinen jatkuvuus},
+  en_terms = {absolute continuity},
+
+  % ---------- public (optional) ----------
+  fi_notes = {%
+    Mitta $\mu$ on absoluuttisesti jatkuva mitan $\nu$ suhteen,
+    jos $\nu(A)=0$ implikoi $\mu(A)=0$.
+    Genetiivi: jatkuvuuden; partitiivi: jatkuvuutta.
+  },
+  en_notes = {%
+    A measure $\mu$ is absolutely continuous with respect to $\nu$
+    if $\nu(A)=0$ implies $\mu(A)=0$.
+  },
+
+  fi_seealso = {Radonin--Nikodymin lause},
+  en_seealso = {Radon--Nikodym theorem}
+}
+
+
 ---
 
 ## 3. Status Workflow
