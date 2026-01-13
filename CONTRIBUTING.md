@@ -14,19 +14,19 @@ Thank you for helping improve it.
 
 ## 2. File format rules
 
-### Entry Type
+### Entry type
 
 - Use **BibTeX** as the master format.
 - Use a custom entry type, `@concept`.
 - **One entry per concept**. Do **not** create multiple entries for synonyms.
 
-### Entry Keys
+### Entry keys
 
 - Entry keys (used as `id`) must:
   - Use hyphens (`absolute-continuity`), never underscores
   - Be unique and immutable once created
 
-### Language-Specific Fields
+### Language-specific fields
 
 - Prefix all fields with the ISO language code:
   - `fi_` for Finnish
