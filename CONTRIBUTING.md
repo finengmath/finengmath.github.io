@@ -64,6 +64,9 @@ Thank you for helping improve it.
   date   = {2026-01-12},
   status = {ready},
 
+  % ---------- admin (optional, hidden) ----------
+  domains = {analysis},
+
   % ---------- public (mandatory) ----------
   fi_terms = {absoluuttinen jatkuvuus},
   en_terms = {absolute continuity},
