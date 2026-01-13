@@ -6,7 +6,7 @@ Thank you for helping improve it.
 
 ---
 
-## 1. Concept vs serm
+## 1. Concept vs term
 
 - **Concept:** a single mathematical idea. Each BibTeX entry represents one concept.  
 - **Term:** a language-specific name for a concept. A concept may have multiple terms per language, listed in order of preference.
