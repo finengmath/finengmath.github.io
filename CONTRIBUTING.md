@@ -125,7 +125,6 @@ Copy-paste this into your BibTeX file and fill in the fields:
 
 ```bibtex
 @concept{<id>,
-  id     = {<id>},
   date   = {YYYY-MM-DD},
   status = {draft},
   domains = {<domain1>, <domain2>},
