@@ -118,4 +118,21 @@ Contributions are coordinated through a dedicated editorial team.
 - Terms are **language-specific**.
 - Use **one entry per concept** to ensure clarity, maintainability, and scalability.
 
+## 7. Template for new concepts
+
+Copy-paste this into your BibTeX file and fill in the fields:
+
+```bibtex
+@concept{<id>,
+  id     = {<id>},
+  date   = {YYYY-MM-DD},
+  status = {draft},
+  domains = {<domain1>, <domain2>},
+  fi_terms = {<fi-term1>, <fi-term2>},
+  en_terms = {<en-term1>, <en-term2>},
+  fi_notes = {<Finnish notes>},
+  en_notes = {<English notes>},
+  fi_seealso = {<related Finnish terms>},
+  en_seealso = {<related English terms>},
+}
 
