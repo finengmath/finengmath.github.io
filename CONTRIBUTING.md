@@ -41,6 +41,9 @@ Thank you for helping improve it.
   - `id` — unique concept identifier
   - `date` — last updated in ISO-8601 format (`YYYY-MM-DD`)
   - `status` — either `draft` or `ready`
+- **Optional admin fields (hidden from public):**
+  - `domains` — domains of mathematics (basic, algebra, analysis, computational mathematics, discrete mathematics, geometry, linear algebra, numerical analysis, probability, operations research, statistics)
+
 
 ### Notes
 
