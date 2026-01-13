@@ -6,13 +6,13 @@ Thank you for helping improve it.
 
 ---
 
-## 1. Concept vs Term
+## 1. Concept vs serm
 
 - **Concept:** a single mathematical idea. Each BibTeX entry represents one concept.  
 - **Term:** a language-specific name for a concept. A concept may have multiple terms per language, listed in order of preference.
 
 
-## 2. File Format Rules
+## 2. File format rules
 
 ### Entry Type
 
@@ -86,7 +86,7 @@ Thank you for helping improve it.
 
 ---
 
-## 3. Status Workflow
+## 3. Status workflow
 
 - All new entries must have `status = {draft}`.
 - Maintainers review entries and set `status = {ready}` once approved.
@@ -94,15 +94,13 @@ Thank you for helping improve it.
 
 ---
 
-## 4. How to Contribute
+## 4. How to contribute
 
-- To be announced.
-
-> Tip: Make sure to include `date` and `status = {draft}` in all new entries.
+- Only dedicated editors are allowed to contribute.
 
 ---
 
-## 5. What Not to Do
+## 5. What not to do
 
 - Do **not** add machine-translated terms without review
 - Do **not** rename an existing `id`
@@ -117,4 +115,4 @@ Thank you for helping improve it.
 - Terms are **language-specific**.
 - Use **one entry per concept** to ensure clarity, maintainability, and scalability.
 
-Thank you for contributing!
+
