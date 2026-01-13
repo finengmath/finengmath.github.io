@@ -84,4 +84,5 @@ For questions about the project or editorial collaboration, please contact the m
 The lexicon content and data in this repository are licensed under the
 Creative Commons Attribution 4.0 International (CC BY 4.0) license.
 
+For the full license text, see [LICENSE](LICENSE).
 
