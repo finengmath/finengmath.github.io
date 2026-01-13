@@ -100,6 +100,7 @@ Contributions are coordinated through a dedicated editorial team.
 ## 4. How to contribute
 
 - Only dedicated editors are allowed to contribute.
+- How to update the main BibTex file in practice?  UNDER CONSIDERATION (TBA)
 
 ---
 
