@@ -10,7 +10,7 @@ _Last updated: 2026-01-13_
 
 ## Overview
 
-This project aims to build a Finnish–English mathematical lexicon with bidirectional search, browsing, and community-supported translation requests. The lexicon is designed to scale to thousands of entries and to support both web-based use and classical PDF publication.
+This project aims to build a Finnish–English mathematical lexicon with bidirectional search, browsing, and community-submitted translation requests. The lexicon is designed to scale to thousands of entries and to support both web-based use and classical PDF publication.
 
 The authoritative data source is a BibTeX file with a fixed schema, which is automatically mapped to JSON for use in web interfaces and other tools.
 
@@ -44,7 +44,7 @@ The authoritative data source is a BibTeX file with a fixed schema, which is aut
   Responsible for reviewing translation requests and maintaining dictionary entries
 
 - **Anyone**  
-  Public users who can browse, search, and propose new translations and corrections
+  Public users who can browse, search, and propose translations and corrections
 
 ---
 
