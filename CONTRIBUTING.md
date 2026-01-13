@@ -1,5 +1,5 @@
 
-# Contributing to the FI–EN–FI Math Dictionary
+# Contributing to the Finnish–English Math Dictionary
 
 Welcome! This repository collects mathematical concepts with their Finnish and English terms.  
 Thank you for helping improve it.
