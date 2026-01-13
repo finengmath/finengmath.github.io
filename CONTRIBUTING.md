@@ -59,13 +59,6 @@ Thank you for helping improve it.
 
 ```bibtex
 @concept{absolute-continuity,
-  % ---------- admin (mandatory, hidden) ----------
-  id     = {absolute-continuity},
-  date   = {2026-01-12},
-  status = {ready},
-
-  % ---------- admin (optional, hidden) ----------
-  domains = {analysis},
 
   % ---------- public (mandatory) ----------
   fi_terms = {absoluuttinen jatkuvuus},
@@ -81,9 +74,16 @@ Thank you for helping improve it.
     A measure $\mu$ is absolutely continuous with respect to $\nu$
     if $\nu(A)=0$ implies $\mu(A)=0$.
   },
-
   fi_seealso = {Radonin--Nikodymin lause},
   en_seealso = {Radon--Nikodym theorem}
+
+  % ---------- admin (mandatory, hidden) ----------
+  id     = {absolute-continuity},
+  date   = {2026-01-12},
+  status = {ready},
+
+  % ---------- admin (optional, hidden) ----------
+  domains = {analysis},
 }
 ```
 
