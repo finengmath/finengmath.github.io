@@ -43,6 +43,8 @@ Contributions are coordinated through a dedicated editorial team.
   - `status` — either `draft` or `ready`
 - **Optional admin fields (hidden from public):**
   - `domains` — domains of mathematics (basic, algebra, analysis, computational mathematics, discrete mathematics, geometry, linear algebra, numerical analysis, probability, operations research, statistics)
+  - `tags` - tags that we may add while building up things, e.g. "set theory"
+  - `comments` - misc comments e.g. "Lasse: Tämä on hankala kääntää, pitää vielä miettiä."
 
 
 ### Notes
