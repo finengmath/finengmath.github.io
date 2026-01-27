@@ -9,8 +9,8 @@
             margin: 20px;
             max-width: 900px;
         }
-        h1, h2 {
-            margin-bottom: 5px;
+        h1 {
+            margin-bottom: 10px;
         }
         input[type="text"] {
             padding: 8px;
@@ -35,87 +35,89 @@
             color: #555;
         }
         #status {
-            margin-bottom: 15px;
-            font-weight: bold;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: green;
         }
     </style>
 </head>
 <body>
 
-<h1>Matematiikan suomi–englanti-sanasto</h1>
+    <h1>Matematiikan suomi–englanti-sanasto</h1>
 
-<div id="status">Ladataan sanastoa...</div>
-<input type="text" id="search" placeholder="Hakusana (suomeksi tai englanniksi)..." disabled>
+    <div id="status">Ladataan sanastoa…</div>
+    <input type="text" id="search" placeholder="Hakusana (suomeksi tai englanniksi)…">
 
-<div id="results"></div>
+    <div id="results"></div>
 
-<script>
-let terms = [];
-const searchInput = document.getElementById('search');
-const resultsDiv = document.getElementById('results');
-const statusDiv = document.getElementById('status');
+    <script>
+        let terms = [];
 
-// Load JSON data
-fetch('lexicon.json')
-    .then(response => response.json())
-    .then(data => {
-        terms = Object.keys(data).map(id => ({
-            id,
-            en: Array.isArray(data[id].en_terms) ? data[id].en_terms : [],
-            fi: Array.isArray(data[id].fi_terms) ? data[id].fi_terms : [],
-            domains: data[id].domains || [],
-            tags: data[id].tags || [],
-            status: data[id].status || '',
-            date: data[id].date || '',
-            comments: data[id].comments || '',
-            en_notes: data[id].en_notes || '',
-            fi_notes: data[id].fi_notes || ''
-        }));
+        fetch('lexicon.json')
+            .then(response => response.json())
+            .then(data => {
+                // Convert dictionary to array with id
+                terms = Object.keys(data).map(id => {
+                    const item = data[id];
+                    return {
+                        id,
+                        en: Array.isArray(item.en_terms) ? item.en_terms : [],
+                        fi: Array.isArray(item.fi_terms) ? item.fi_terms : [],
+                        domains: item.domains || [],
+                        tags: item.tags || [],
+                        status: item.status || '',
+                        date: item.date || '',
+                        comments: item.comments || '',
+                        en_notes: item.en_notes || '',
+                        fi_notes: item.fi_notes || ''
+                    };
+                })
+                // Keep only entries with status "ready"
+                .filter(t => typeof t.status === 'string' && t.status.toLowerCase() === 'ready');
 
-        // Only keep ready items, safely
-        .filter(t => typeof t.status === 'string' && t.status.toLowerCase() === 'ready');
+                // Update status message
+                document.getElementById('status').textContent = 
+                    `Sanasto ladattu onnistuneesti, ${terms.length} termiä valmiina.`;
+            })
+            .catch(err => {
+                document.getElementById('status').textContent = 'JSON-tiedoston lataus epäonnistui.';
+                console.error("JSON-tiedoston lataus ei onnistunut:", err);
+            });
 
-        statusDiv.textContent = `Sanasto ladattu onnistuneesti, ${terms.length} termiä.`;
-        searchInput.disabled = false;
-    })
-    .catch(err => {
-        statusDiv.textContent = 'JSON-tiedoston lataus ei onnistunut.';
-        console.error("JSON-tiedoston lataus ei onnistunut:", err);
-    });
+        const searchInput = document.getElementById('search');
+        const resultsDiv = document.getElementById('results');
 
-// Search function
-searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    resultsDiv.innerHTML = '';
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            resultsDiv.innerHTML = '';
 
-    if (!query) return;
+            if (!query) return;
 
-    const filtered = terms.filter(t => 
-        t.id.toLowerCase().includes(query) ||
-        (Array.isArray(t.fi) && t.fi.some(f => f.toLowerCase().includes(query))) ||
-        (Array.isArray(t.en) && t.en.some(e => e.toLowerCase().includes(query)))
-    );
+            const filtered = terms.filter(t => 
+                (t.id && t.id.toLowerCase().includes(query)) ||
+                (Array.isArray(t.fi) && t.fi.some(f => f.toLowerCase().includes(query))) ||
+                (Array.isArray(t.en) && t.en.some(e => e.toLowerCase().includes(query)))
+            );
 
-    if (filtered.length === 0) {
-        resultsDiv.innerHTML = '<p>Ei osumia.</p>';
-        return;
-    }
+            filtered.forEach(t => {
+                const div = document.createElement('div');
+                div.className = 'term';
+                div.innerHTML = `
+                    <div class="concept-id">${t.id}</div>
+                    <span class="label">suomi:</span> ${t.fi.length ? t.fi.join(', ') : '-'}<br>
+                    <span class="label">englanti:</span> ${t.en.length ? t.en.join(', ') : '-'}<br>
+                    ${t.comments ? `<span class="label">Kommentti:</span> ${t.comments}<br>` : ''}
+                    ${t.en_notes ? `<span class="label">English note:</span> ${t.en_notes}<br>` : ''}
+                    ${t.fi_notes ? `<span class="label">Suomi-note:</span> ${t.fi_notes}<br>` : ''}
+                `;
+                resultsDiv.appendChild(div);
+            });
 
-    filtered.forEach(t => {
-        const div = document.createElement('div');
-        div.className = 'term';
-        div.innerHTML = `
-            <div class="concept-id">${t.id}</div>
-            <span class="label">suomi:</span> ${t.fi.join(', ') || '-'}<br>
-            <span class="label">englanti:</span> ${t.en.join(', ') || '-'}<br>
-            ${t.comments ? `<span class="label">Kommentti:</span> ${t.comments}<br>` : ''}
-            ${t.en_notes ? `<span class="label">English note:</span> ${t.en_notes}<br>` : ''}
-            ${t.fi_notes ? `<span class="label">Suomi-note:</span> ${t.fi_notes}<br>` : ''}
-        `;
-        resultsDiv.appendChild(div);
-    });
-});
-</script>
+            if (filtered.length === 0) {
+                resultsDiv.innerHTML = '<p>Ei osumia.</p>';
+            }
+        });
+    </script>
 
 </body>
 </html>
