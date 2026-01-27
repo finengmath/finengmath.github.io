@@ -48,7 +48,7 @@
         let terms = [];
 
         // Load JSON data (new format: dictionary keyed by concept ID)
-        fetch('concepts.json')
+        fetch('lexicon.json')
             .then(response => response.json())
             .then(data => {
                 // Convert dictionary to array with id
