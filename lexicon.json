@@ -8,56 +8,38 @@
     "date": "2026-01-14"
   },
   "arithmetic-mean": {
-    "fi_terms": [
-      "aritmeettinen keskiarvo",
-      "keskiarvo"
-    ],
-    "en_terms": [
-      "arithmetic mean",
-      "average",
-      "mean"
-    ],
+    "fi_terms": "aritmeettinen keskiarvo, keskiarvo",
+    "en_terms": "arithmetic mean, average, mean",
     "domains": "statistics",
-    "en_notes": [
-      "The mean of numbers $x_1",
-      "\\dots",
-      "x_n$ is $\\\\frac{1"
-    ],
-    "fi_notes": [
-      "Lukujen $x_1",
-      "\\dots",
-      "x_n$ keskiarvo on $\\\\frac{1"
-    ],
+    "en_notes": "The mean of numbers $x_1,\\dots, x_n$ is $\\\\frac{1}{n} \\\\sum_{i=1}^n x_i$.",
+    "fi_notes": "Lukujen $x_1,\\dots, x_n$ keskiarvo on $\\\\frac{1}{n} \\\\sum_{i=1}^n x_i$.",
     "en_seealso": "expectation",
     "fi_seealso": "odotusarvo",
     "status": "draft",
     "date": "2026-01-27"
   },
+  "axis": {
+    "fi_terms": "akseli",
+    "en_terms": "axis",
+    "fi_notes": "Esim.\\ $x$-akseli, $y$-akseli.",
+    "en_notes": "E.g.\\ $x$-axis, $y$-axis. Plural: axes.",
+    "domains": "geometry",
+    "status": "draft",
+    "date": "2026-01-26"
+  },
   "ball": {
     "en_terms": "ball",
-    "fi_terms": [
-      "pallo",
-      "kuula"
-    ],
+    "fi_terms": "pallo, kuula",
     "en_notes": "The open ball of radius $r$ and center $x$ is the set of all points whose distance from $x$ is less than $r$.",
-    "fi_notes": [
-      "Avoin pallo säteenä $r$ ja keskipisteenä $x$ koostuu pisteistä",
-      "joiden etäisyys $x$:stä on alle $r$."
-    ],
+    "fi_notes": "Avoin pallo säteenä $r$ ja keskipisteenä $x$ koostuu pisteistä, joiden etäisyys $x$:stä on alle $r$.",
     "domains": "geometry",
-    "en_seealso": [
-      "disk",
-      "sphere"
-    ],
+    "en_seealso": "disk, sphere",
     "status": "draft",
     "date": "2026-01-26"
   },
   "cardinal-number": {
     "en_terms": "cardinal number",
-    "fi_terms": [
-      "mahtavuusluku",
-      "kardinaaliluku"
-    ],
+    "fi_terms": "mahtavuusluku, kardinaaliluku",
     "domains": "basic",
     "tags": "set theory",
     "comments": "Tarkasta tämä.",
@@ -66,10 +48,7 @@
   },
   "cardinality": {
     "en_terms": "cardinality",
-    "fi_terms": [
-      "mahtavuus",
-      "kardinaliteetti"
-    ],
+    "fi_terms": "mahtavuus, kardinaliteetti",
     "domains": "basic",
     "tags": "set theory",
     "status": "draft",
@@ -79,27 +58,15 @@
     "en_terms": "circle",
     "fi_terms": "ympyrä",
     "en_notes": "The circle of radius $r$ and center $x$ consists of the points of the plane whose distance from $x$ is $r$.",
-    "fi_notes": [
-      "Ympyrä säteenä $r$ ja keskipisteenä $x$ muodostuu tason pisteistä",
-      "joiden etäisyys $x$:stä on $r$."
-    ],
+    "fi_notes": "Ympyrä säteenä $r$ ja keskipisteenä $x$ muodostuu tason pisteistä, joiden etäisyys $x$:stä on $r$.",
     "domains": "geometry",
-    "en_seealso": [
-      "sphere",
-      "disk"
-    ],
+    "en_seealso": "sphere, disk",
     "status": "draft",
     "date": "2026-01-26"
   },
   "complement": {
-    "en_terms": [
-      "complement",
-      "absolute complement"
-    ],
-    "fi_terms": [
-      "komplementti",
-      "absoluuttinen komplementti"
-    ],
+    "en_terms": "complement, absolute complement",
+    "fi_terms": "komplementti, absoluuttinen komplementti",
     "domains": "basic",
     "tags": "set theory",
     "status": "draft",
@@ -118,13 +85,7 @@
   "cover": {
     "en_terms": "cover",
     "fi_terms": "peite",
-    "en_notes": [
-      "Sets $A_1",
-      "A_2",
-      "\\dots$ form a cover of $B$ if $B$ is a subsets of the union of $A_1",
-      "A_2",
-      "\\dots$"
-    ],
+    "en_notes": "Sets $A_1,A_2,\\dots$ form a cover of $B$ if $B$ is a subsets of the union of $A_1,A_2,\\dots$",
     "fi_notes": "Joukot $A_1,A_2,\\dots$ muodostavat joukon $B$ peitteen, jos $B$ on joukkojen $A_1,A_2,\\dots$ yhdisteen osajoukko.",
     "domains": "basic",
     "tags": "set theory",
@@ -136,10 +97,7 @@
     "en_terms": "disjoint",
     "fi_terms": "erilliset",
     "en_notes": "Sets $A$ and $B$ are disjoint if they do not have common members.",
-    "fi_notes": [
-      "Joukot $A$ ja $B$ ovat erilliset",
-      "jos niillä ei ole yhteisiä alkioita."
-    ],
+    "fi_notes": "Joukot $A$ ja $B$ ovat erilliset, jos niillä ei ole yhteisiä alkioita.",
     "domains": "basic",
     "tags": "set theory",
     "comments": "Onkohan tämä ok?",
@@ -148,11 +106,7 @@
   },
   "disjoint-union": {
     "en_terms": "disjoint union",
-    "fi_terms": [
-      "erillinen yhdiste",
-      "erillinen unioni",
-      "pistevieras"
-    ],
+    "fi_terms": "erillinen yhdiste, erillinen unioni, pistevieras",
     "domains": "basic",
     "tags": "set theory",
     "comments": "Onkohan tämä ok? Vai pelkkä \"disjoint\"?",
@@ -162,30 +116,16 @@
   "disk": {
     "en_terms": "disk",
     "fi_terms": "kiekko",
-    "en_notes": "{The open disk of radius $r$ and center $x$ consists of the points in a plane whose distance from $x$ is less than $r$.",
-    "fi_notes": [
-      "{Avoin kiekko säteenä $r$ ja keskipisteenä $x$ koostuu tason pisteistä",
-      "joiden etäisyys $x$:stä on alle $r$."
-    ],
+    "en_notes": "{The open disk of radius $r$ and center $x$ consists of the points in a plane whose distance from $x$ is less than $r$.}",
+    "fi_notes": "{Avoin kiekko säteenä $r$ ja keskipisteenä $x$ koostuu tason pisteistä, joiden etäisyys $x$:stä on alle $r$.}",
     "domains": "geometry",
-    "en_seealso": [
-      "ball",
-      "circle"
-    ],
+    "en_seealso": "ball, circle",
     "status": "draft",
     "date": "2026-01-26"
   },
   "element": {
-    "en_terms": [
-      "element",
-      "point",
-      "member"
-    ],
-    "fi_terms": [
-      "alkio",
-      "piste",
-      "jäsen"
-    ],
+    "en_terms": "element, point, member",
+    "fi_terms": "alkio, piste, jäsen",
     "domains": "basic",
     "tags": "set theory",
     "status": "ready",
@@ -210,20 +150,10 @@
   },
   "expectation": {
     "fi_terms": "odotusarvo",
-    "en_terms": [
-      "expectation",
-      "expected value",
-      "mean"
-    ],
+    "en_terms": "expectation, expected value, mean",
     "domains": "stochastics",
-    "en_notes": [
-      "The expectation of a uniformly distributed random variable in $[0",
-      "1]$ is $1/2$."
-    ],
-    "fi_notes": [
-      "Välillä $[0",
-      "1]$ tasajakautuneen satunnaismuuttujan odotusarvo on $1/2$."
-    ],
+    "en_notes": "The expectation of a uniformly distributed random variable in $[0,1]$ is $1/2$.",
+    "fi_notes": "Välillä $[0,1]$ tasajakautuneen satunnaismuuttujan odotusarvo on $1/2$.",
     "fi_seealso": "keskiarvo",
     "en_seealso": "arithmetic mean",
     "status": "draft",
@@ -238,27 +168,15 @@
     "date": "2026-01-14"
   },
   "geometrical-point": {
-    "en_terms": "axis",
-    "fi_terms": "akseli",
+    "en_terms": "point, location",
+    "fi_terms": "piste, paikka, kohta",
     "domains": "geometry",
-    "status": "draft",
-    "date": "2026-01-26",
-    "fi_notes": [
-      "Esim.\\ $x$-akseli",
-      "$y$-akseli."
-    ],
-    "en_notes": [
-      "E.g.\\ $x$-axis",
-      "$y$-axis. Plural: axes."
-    ]
+    "status": "ready",
+    "date": "2026-01-26"
   },
   "graph-chart": {
     "fi_terms": "kuvio",
-    "en_terms": [
-      "chart",
-      "plot",
-      "graph"
-    ],
+    "en_terms": "chart, plot, graph",
     "domains": "basic",
     "status": "draft",
     "date": "2026-01-26"
@@ -267,49 +185,34 @@
     "fi_terms": "kuvaaja",
     "en_terms": "graph",
     "domains": "basic",
-    "fi_notes": [
-      "Funktion $f$ kuvaaja muodostuu tason pisteistä $(x",
-      "f(x))$."
-    ],
+    "fi_notes": "Funktion $f$ kuvaaja muodostuu tason pisteistä $(x, f(x))$.",
     "status": "draft",
     "date": "2026-01-26"
   },
   "graph-network": {
-    "en_terms": [
-      "graph",
-      "network"
-    ],
-    "fi_terms": [
-      "verkko",
-      "graafi"
-    ],
-    "en_notes": [
-      "The complete undirected graph on node set $\\{1",
-      "\\dots",
-      "n\\"
-    ],
-    "fi_notes": [
-      "Solmujoukon $\\{1",
-      "\\dots",
-      "n\\"
-    ],
+    "en_terms": "graph, network",
+    "fi_terms": "verkko, graafi",
+    "en_notes": "The complete undirected graph on node set $\\{1,\\dots, n\\}$ contains $\\binom{n}{2}$ links.",
+    "fi_notes": "Solmujoukon $\\{1,\\dots, n\\}$ täysi suuntaamaton verkko sisältää $\\binom{n}{2}$ linkkiä.",
     "domains": "discrete",
     "status": "draft",
     "date": "2026-01-26"
   },
   "hyperball": {
-    "en_terms": [
-      "ball",
-      "hyperball"
-    ],
+    "en_terms": "ball, hyperball",
     "en_notes": "A hyperball is a ball in a high-dimensional space.",
-    "fi_terms": [
-      "pallo",
-      "kuula",
-      "hyperpallo",
-      "hyperkuula"
-    ],
+    "fi_terms": "pallo, kuula, hyperpallo, hyperkuula",
     "fi_notes": "Hyperpallo on korkeaulotteisen avaruuden pallo.",
+    "domains": "geometry",
+    "en_seealso": "ball",
+    "status": "draft",
+    "date": "2026-01-26"
+  },
+  "hypersphere": {
+    "fi_terms": "pallopinta, hyperpallopinta",
+    "en_terms": "sphere, hypersphere",
+    "en_notes": "A hypersphere is a sphere in a high-dimensional space.",
+    "fi_notes": "Hyperpallopinta on korkeaulotteisen avaruuden pallopinta.",
     "domains": "geometry",
     "en_seealso": "ball",
     "status": "draft",
@@ -317,10 +220,7 @@
   },
   "inclusion-exclusion-principle": {
     "en_terms": "inclusion--exclusion principle",
-    "fi_terms": [
-      "seulaperiaate",
-      "mukaan--pois-periaate"
-    ],
+    "fi_terms": "seulaperiaate,  mukaan--pois-periaate",
     "domains": "basic",
     "tags": "set theory",
     "status": "draft",
@@ -337,6 +237,14 @@
   "intersection": {
     "en_terms": "intersection",
     "fi_terms": "leikkaus",
+    "domains": "basic",
+    "tags": "set theory",
+    "status": "draft",
+    "date": "2026-01-14"
+  },
+  "multiset": {
+    "en_terms": "multiset",
+    "fi_terms": "multijoukko",
     "domains": "basic",
     "tags": "set theory",
     "status": "draft",
@@ -370,16 +278,8 @@
     "date": "2026-01-26"
   },
   "set": {
-    "en_terms": [
-      "set",
-      "collection",
-      "family"
-    ],
-    "fi_terms": [
-      "joukko",
-      "kokoelma",
-      "perhe"
-    ],
+    "en_terms": "set, collection, family",
+    "fi_terms": "joukko, kokoelma, perhe",
     "fi_notes": "Joukkojen joukkoa kutsutaan usein joukkojen perheeksi tai kokoelmaksi.",
     "domains": "basic",
     "tags": "set theory",
@@ -396,16 +296,8 @@
     "date": "2026-01-14"
   },
   "set-difference": {
-    "en_terms": [
-      "set difference",
-      "difference",
-      "relative complement"
-    ],
-    "fi_terms": [
-      "joukkoerotus",
-      "erotus",
-      "suhteellinen komplementti"
-    ],
+    "en_terms": "set difference, difference, relative complement",
+    "fi_terms": "joukkoerotus, erotus, suhteellinen komplementti",
     "en_notes": "The difference of sets $A$ and $B$ is the set of elements in $A$ that are not elements of $B$.",
     "fi_notes": "Joukkojen $A$ ja $B$ erotus on niiden $A$:n alkioiden joukko, jotka eivät ole $B$:n alkioita.",
     "domains": "basic",
@@ -414,16 +306,8 @@
     "date": "2026-01-14"
   },
   "set-product": {
-    "en_terms": [
-      "set product",
-      "Cartesian product",
-      "product"
-    ],
-    "fi_terms": [
-      "tulojoukko",
-      "karteesinen tulo",
-      "tulo"
-    ],
+    "en_terms": "set product, Cartesian product, product",
+    "fi_terms": "tulojoukko, karteesinen tulo, tulo",
     "en_notes": "The product of sets $A$ and $B$ is the set of ordered pairs $(a,b)$ in which $a$ belongs to $A$ and $b$ belongs to $B$.",
     "fi_notes": "Joukkojen $A$ ja $B$ tulo on järjestettyjen parien $(a,b)$ joukko, jossa $a$ kuuluu joukkoon $A$ ja $b$ joukkoon $B$.",
     "domains": "basic",
@@ -440,10 +324,7 @@
     "date": "2026-01-26"
   },
   "slope": {
-    "en_terms": [
-      "slope",
-      "angular coefficient"
-    ],
+    "en_terms": "slope, angular coefficient",
     "fi_terms": "kulmakerroin",
     "domains": "geometry",
     "status": "draft",
@@ -453,15 +334,9 @@
     "en_terms": "sphere",
     "fi_terms": "pallopinta",
     "en_notes": "The sphere of radius $r$ and center $x$ is the set of points whose distance from $x$ is $r$.",
-    "fi_notes": [
-      "Pallopinta säteenä $r$ ja keskipisteenä $x$ muodostuu pisteistä",
-      "joiden etäisyys $x$:stä on $r$."
-    ],
+    "fi_notes": "Pallopinta säteenä $r$ ja keskipisteenä $x$ muodostuu pisteistä, joiden etäisyys $x$:stä on $r$.",
     "domains": "geometry",
-    "en_seealso": [
-      "circle",
-      "ball"
-    ],
+    "en_seealso": "circle, ball",
     "status": "draft",
     "date": "2026-01-26"
   },
@@ -474,10 +349,7 @@
   },
   "stochastic": {
     "fi_terms": "stokastinen",
-    "en_terms": [
-      "stochastic",
-      "probabilistic"
-    ],
+    "en_terms": "stochastic, probabilistic",
     "domains": "stochastics",
     "en_notes": "Involving or based on randomness or probability.",
     "fi_notes": "Satunnaisuuteen tai todennäköisyyteen liittyvä.",
@@ -493,12 +365,12 @@
     "date": "2026-01-26"
   },
   "subset": {
-    "en_terms": "multiset",
-    "fi_terms": "multijoukko",
+    "en_terms": "subset, subfamily, subcollection",
+    "fi_terms": "osajoukko, osaperhe, osakokelma",
     "domains": "basic",
     "tags": "set theory",
-    "status": "draft",
-    "date": "2026-01-14"
+    "status": "ready",
+    "date": "2026-01-26"
   },
   "superset": {
     "en_terms": "superset",
@@ -510,14 +382,8 @@
     "date": "2026-01-26"
   },
   "symmetric-set-difference": {
-    "en_terms": [
-      "symmetric set difference",
-      "symmetric difference"
-    ],
-    "fi_terms": [
-      "symmetrinen joukkoerotus",
-      "symmetrinen erotus"
-    ],
+    "en_terms": "symmetric set difference, symmetric difference",
+    "fi_terms": "symmetrinen joukkoerotus, symmetrinen erotus",
     "en_notes": "The symmetric difference of sets $A$ and $B$ is the set of elements that belong to either $A$ or $B$, but not both.",
     "fi_notes": "Joukkojen $A$ ja $B$ symmetrinen erotus on niiden alkioiden joukko, jotka kuuluvat joko $A$:han tai $B$:hen, mutta eivät molempiin.",
     "domains": "basic",
@@ -537,10 +403,7 @@
   },
   "union": {
     "en_terms": "union",
-    "fi_terms": [
-      "yhdiste",
-      "unioni"
-    ],
+    "fi_terms": "yhdiste, unioni",
     "domains": "basic",
     "tags": "set theory",
     "status": "draft",
