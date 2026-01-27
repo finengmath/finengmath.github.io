@@ -72,8 +72,8 @@ fetch('lexicon.json')
             fi_notes: data[id].fi_notes || ''
         }));
 
-        // Only keep ready items
-        .filter(t => t.status.toLowerCase() === 'ready');
+        // Only keep ready items, safely
+        .filter(t => typeof t.status === 'string' && t.status.toLowerCase() === 'ready');
 
         statusDiv.textContent = `Sanasto ladattu onnistuneesti, ${terms.length} termiä.`;
         searchInput.disabled = false;
