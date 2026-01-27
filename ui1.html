@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Matematiikan suomi–englanti sanasto</title>
+    <title>Matematiikan suomi–englanti-sanasto</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<h1>Matematiikan suomi–englanti sanasto</h1>
+<h1>Matematiikan suomi–englanti-sanasto</h1>
 
 <div id="status">Ladataan sanastoa...</div>
 <input type="text" id="search" placeholder="Hakusana (suomeksi tai englanniksi)..." disabled>
@@ -71,6 +71,9 @@ fetch('lexicon.json')
             en_notes: data[id].en_notes || '',
             fi_notes: data[id].fi_notes || ''
         }));
+
+        // Only keep ready items
+        .filter(t => t.status.toLowerCase() === 'ready');
 
         statusDiv.textContent = `Sanasto ladattu onnistuneesti, ${terms.length} termiä.`;
         searchInput.disabled = false;
