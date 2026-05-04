@@ -23,6 +23,21 @@ Each entry is a `@concept` block with structured fields.
 }
 ```
 
+```
+@concept{set-difference,
+ en_terms = {set difference, difference, relative complement},
+ fi_terms = {joukkoerotus, erotus, suhteellinen komplementti},
+ en_notes = {The difference of sets $A$ and $B$
+ is the set of elements in $A$ that are not elements of $B$.},
+ fi_notes = {Joukkojen $A$ ja $B$ erotus on niiden $A$:n alkioiden joukko,
+ jotka eivät ole $B$:n alkioita.},
+ domains = {basic},
+ tags = {set theory},
+ status = {draft},
+ date = {2026-01-14},
+}
+```
+
 ## Structure
 
     @concept{<term-id>,
