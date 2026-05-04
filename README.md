@@ -4,7 +4,7 @@
 **Finnish–English mathematical lexicon with text search support**
 
 Lasse Leskelä  
-_Last updated: 2026-01-13_
+_Last updated: 2026-05-04_
 
 ---
 
@@ -19,7 +19,8 @@ The authoritative data source is a BibTeX file with a fixed schema, which is aut
 ## System components
 
 - **Database**  
-  BibTeX master file, automatically mapped to a JSON representation
+  BibTeX master file, automatically mapped to a JSON representation.
+  See docs/format.md for file format details, and principles.
 
 - **Translation request queue**  
   Mechanism for collecting new term requests and corrections (initially via email to editor(s), later possibly via a web interface)
