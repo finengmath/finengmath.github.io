@@ -1,4 +1,4 @@
-# FI–EN–FI Dictionary Format
+# Lexicon file format
 
 ## Overview
 
@@ -37,14 +37,25 @@ Each entry is a `@concept` block with structured fields.
 
 ## Fields
 
-Mandatory (user)
+### Mandatory (user)
 
-- en_terms
-- English terms (list)
+- **en_terms**
+English terms (list)
 
 Example:
 
 ```bibtex
 en_terms = {graph, network}
 ```
+
+- **fi_terms**
+Finnish terms (list)
+Example:
+
+```bibtex
+fi_terms = {verkko, verkosto, graafi}
+```
+
+### Mandatory (admin)
+
 
