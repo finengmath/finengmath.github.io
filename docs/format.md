@@ -50,6 +50,7 @@ en_terms = {graph, network}
 
 - **fi_terms**
 Finnish terms (list)
+
 Example:
 
 ```bibtex
@@ -58,4 +59,24 @@ fi_terms = {verkko, verkosto, graafi}
 
 ### Mandatory (admin)
 
+- **status**
 
+### Optional (admin)
+
+- **date**
+Last update in ISO format ```YYYY-MM-DD```
+
+
+## Conventions
+
+- Preferred term first
+The first term in each list is the recommended term.
+- UTF-8 encoding
+Finnish characters (ä, ö) are allowed.
+- Naming of IDs
+Use lowercase and hyphens:
+
+```
+disjoint-sets
+poisson-process
+```
