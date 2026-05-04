@@ -34,3 +34,17 @@ Each entry is a `@concept` block with structured fields.
 - Fields are key–value pairs
 - Values are enclosed in `{...}`
 - Lists are comma-separated
+
+## Fields
+
+Mandatory (user)
+
+- en_terms
+- English terms (list)
+
+Example:
+
+```bibtex
+en_terms = {graph, network}
+```
+
