@@ -24,11 +24,10 @@ Each entry is a `@concept` block with structured fields.
 
 ## Structure
 
-@concept{<term-id>,
-  <field> = {<value>},
-  ...
-}
-
+    @concept{<term-id>,
+      <field> = {<value>},
+      ...
+    }
 
 - `<term-id>`: unique identifier (lowercase, hyphen-separated recommended)
 - Fields are key–value pairs
