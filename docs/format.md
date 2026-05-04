@@ -82,14 +82,31 @@ Example:
 fi_terms = {verkko, verkosto, graafi}
 ```
 
+### Optional (user)
+
+- **en_notes**
+- **fi_notes**
+
 ### Mandatory (admin)
 
-- **status**
-
-### Optional (admin)
+- **status**: Allowed values: draft, ready
 
 - **date**
 Last update in ISO format ```YYYY-MM-DD```
+
+### Optional (admin)
+
+- **domains**
+High-level classification.
+
+- **tags**
+More specific topics.
+
+- **comments**
+Free-form comments.
+
+
+
 
 
 ## Conventions
