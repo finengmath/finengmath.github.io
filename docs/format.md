@@ -21,6 +21,7 @@ Each entry is a `@concept` block with structured fields.
   status = {draft},
   date = {2026-01-14},
 }
+```
 
 ## Structure
 
