@@ -16,6 +16,18 @@ The authoritative data source is a BibTeX file with a fixed schema, which is aut
 
 ---
 
+## Principles
+
+This dictionary is concept-based rather than term-based. Instead of maintaining separate mappings such as *fi → en* or *en → fi*, each entry corresponds to a single concept identified by a unique ID. Multiple terms in different languages (currently Finnish and English, with the possibility of adding others) are associated with the same concept.
+
+The dictionary does not aim to provide formal definitions. Instead, each entry contains short lists of terms that we consider appropriate for the underlying concept. The precise interpretation of a term is left to the user and depends on context.
+
+Within each list, terms are ordered by preference. This reflects editorial judgment and helps address the inherently non-bijective nature of translation.
+
+Occasionally, we include comments to clarify distinctions between related concepts or to explain nuances in usage (such as inflection and context-dependent meaning).
+
+---
+
 ## System components
 
 - **Database**  
