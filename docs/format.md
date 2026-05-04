@@ -69,11 +69,11 @@ Last update in ISO format ```YYYY-MM-DD```
 
 ## Conventions
 
-- Preferred term first
+- **Preferred term first**
 The first term in each list is the recommended term.
-- UTF-8 encoding
+- **UTF-8 encoding**
 Finnish characters (ä, ö) are allowed.
-- Naming of IDs
+- **Naming of IDs**
 Use lowercase and hyphens:
 
 ```
