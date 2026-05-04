@@ -22,12 +22,7 @@ Each entry is a `@concept` block with structured fields.
   date = {2026-01-14},
 }
 
-
-
-Dictionary File format
-We use bibtex to store dictionary data internally
-
-Each dictionary entry is a @concept block with a unique identifier and a set of fields.
+## Structure
 
 @concept{<term-id>,
   <field> = {<value>},
@@ -35,26 +30,7 @@ Each dictionary entry is a @concept block with a unique identifier and a set of 
 }
 
 
-
-@concept{term-id,
- en_terms = {term-1, term-2, term-3, ...}, % mandatory, user
- fi_terms = {termi-1, termi-2, termi-3, ...}, % mandatory, user
- domains = {basic}, % admin, optional?
- tags = {set theory}, % admin, optional?
- comments = {Onkohan tämä ok? Vai pelkkä "disjoint"?}, % optional, admin
- status = {ready/draft}, % admin, mandatory
- date = {2026-01-14}, % admin last update, 
-}
-
-
-Example
-
-@concept{disjoint-union,
- en_terms = {disjoint union},
- fi_terms = {erillinen yhdiste, erillinen unioni, pistevieras},
- domains = {basic},
- tags = {set theory},
- comments = {Onkohan tämä ok? Vai pelkkä "disjoint"?},
- status = {draft},
- date = {2026-01-14},
-}
+- `<term-id>`: unique identifier (lowercase, hyphen-separated recommended)
+- Fields are key–value pairs
+- Values are enclosed in `{...}`
+- Lists are comma-separated
