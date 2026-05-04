@@ -9,7 +9,7 @@ Each entry is a `@concept` block with structured fields.
 
 ---
 
-## Example
+## Examples
 
 ```bibtex
 @concept{disjoint-sets,
@@ -23,7 +23,7 @@ Each entry is a `@concept` block with structured fields.
 }
 ```
 
-```
+```bibtex
 @concept{set-difference,
  en_terms = {set difference, difference, relative complement},
  fi_terms = {joukkoerotus, erotus, suhteellinen komplementti},
