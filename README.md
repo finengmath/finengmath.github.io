@@ -3,8 +3,7 @@
 
 **Finnish–English mathematical lexicon with text search support**
 
-Lasse Leskelä  
-_Last updated: 2026-05-04_
+_Last updated: 2026-05-05_ / Lasse Leskelä  
 
 ---
 
