@@ -4,6 +4,8 @@
 This repository collects mathematical concepts with their Finnish and English terms.
 Contributions are coordinated through a dedicated editorial team.
 
+Current editorial team: Pekka Alestalo, Tuomas Hytönen, Jukka Kohonen, Lasse Leskelä
+
 ---
 
 ## 1. Concept vs term
